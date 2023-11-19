@@ -1,45 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
   <title>Weather App</title>
 </head>
+
 <body>
 
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid" style="background-color: rgb(31, 31, 168); height: 90px;">
-      <a class="navbar-brand" style="color: white; margin: 25px; font-size: 30px; padding: 0px;">Weather App</a>
-      <a style="color: white; margin: 25px; font-size: 30px; padding-left: 1320px;">Search for a city: </a>
+      <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather icon"><a class="navbar-brand" style="color: white; margin: 25px; font-size: 30px; padding: 0px;">Weather App</a>
+      <a style="color: white; margin: 25px; font-size: 30px; padding-left: 132px;">Search for a city: </a>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Enter city name" id="city-input">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit" id="search-form">Search</button>
       </form>
     </div>
   </nav>
 
+  <div id="current-weather">
+    <img src="" alt="">
+    <ul class="list-group" id="search-history">
+      <li class="list-group-item active" aria-current="true" id="location">Location - </li>
+      <li class="list-group-item" id="date">Date: </li>
+      <li class="list-group-item" id="temp">Tempature: </li>
+      <li class="list-group-item" id="wind">Wind: </li>
+      <li class="list-group-item" id="humidity">Humiditiy: </li>
+    </ul>
+  </div>
 
 
 
-<div id="current-weather">
-    <!-- Display current weather data here -->
-</div>
+  <div id="futureForeCastContainer">
+    <p class="d-inline-flex gap-1">
+      <a class="btn btn-primary col col-lg-2" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+        aria-expanded="false" aria-controls="multiCollapseExample1">Sunday</a>
+      <button class="btn btn-primary col col-lg-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample2" aria-expanded="false"
+        aria-controls="multiCollapseExample2">Monday</button>
+      <button class="btn btn-primary col col-lg-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample3" aria-expanded="false"
+        aria-controls="multiCollapseExample3">Tuesday</button>
+      <button class="btn btn-primary col col-lg-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample4" aria-expanded="false"
+        aria-controls="multiCollapseExample4">Wednesday</button>
+      <button class="btn btn-primary col col-lg-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample5" aria-expanded="false"
+        aria-controls="multiCollapseExample1 multiCollapseExample5">Thursday</button>
+      <button class="btn btn-primary col col-lg-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample6" aria-expanded="false"
+        aria-controls="multiCollapseExample1 multiCollapseExample6">Friday</button>
+      <button class="btn btn-primary col col-lg-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample7" aria-expanded="false"
+        aria-controls="multiCollapseExample1 multiCollapseExample7">Saturday</button>
+    </p>
+    <div class="row">
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div class="card card-body">
+            <button type="button" class="btn-close" aria-label="Close" id="closeButton"></button>
+            <h1>Sunday</h1>
+            <ul class="list-group" id="future0">
+              <li class="list-group-item active" aria-current="true">Weather</li>
+              <li class="list-group-item" id="date">Date: </li>
+              <li class="list-group-item" id="temp">Tempature: </li>
+              <li class="list-group-item" id="wind">Wind: </li>
+              <li class="list-group-item" id="humidity">Humiditiy: </li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+          <div class="card card-body">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+            <h1>Monday</h1>
+            <ul class="list-group" id="future1">
+              <li class="list-group-item active" aria-current="true">Weather</li>
+              <li class="list-group-item" id="date">Date: </li>
+              <li class="list-group-item" id="temp">Tempature: </li>
+              <li class="list-group-item" id="wind">Wind: </li>
+              <li class="list-group-item" id="humidity">Humiditiy: </li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse multi-collapse" id="multiCollapseExample3">
+          <div class="card card-body">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+            <h1 >Tuesday</h1>
+            <ul class="list-group" id="future2">
+              <li class="list-group-item active" aria-current="true">Weather</li>
+              <li class="list-group-item" id="date">Date: </li>
+              <li class="list-group-item" id="temp">Tempature: </li>
+              <li class="list-group-item" id="wind">Wind: </li>
+              <li class="list-group-item" id="humidity">Humiditiy: </li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse multi-collapse" id="multiCollapseExample4">
+          <div class="card card-body">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+            <h1>Wednesday</h1>
+            <ul class="list-group" id="future3">
+              <li class="list-group-item active" aria-current="true">Weather</li>
+              <li class="list-group-item" id="date">Date: </li>
+              <li class="list-group-item" id="temp">Tempature: </li>
+              <li class="list-group-item" id="wind">Wind: </li>
+              <li class="list-group-item" id="humidity">Humiditiy: </li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse multi-collapse" id="multiCollapseExample5">
+          <div class="card card-body">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+            <h1>Thursday</h1>
+            <ul class="list-group" id="future4">
+              <li class="list-group-item active" aria-current="true">Weather</li>
+              <li class="list-group-item" id="date">Date: </li>
+              <li class="list-group-item" id="temp">Tempature: </li>
+              <li class="list-group-item" id="wind">Wind: </li>
+              <li class="list-group-item" id="humidity">Humiditiy: </li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="collapse multi-collapse" id="multiCollapseExample6">
+          <div class="card card-body">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+            <h1>Friday</h1>
+            <ul class="list-group">
+              <li class="list-group-item active" aria-current="true">Weather</li>
+              <li class="list-group-item" id="date">Date: </li>
+              <li class="list-group-item" id="temp">Tempature: </li>
+              <li class="list-group-item" id="wind">Wind: </li>
+              <li class="list-group-item" id="humidity">Humiditiy: </li>
+            </ul>
+          </div>
+        </div> -->
+        <!-- <div class="collapse multi-collapse" id="multiCollapseExample7">
+          <div class="card card-body">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+            <h1>Satuday</h1>
+            <ul class="list-group">
+              <li class="list-group-item active" aria-current="true">Weather</li>
+              <li class="list-group-item" id="date">Date: </li>
+              <li class="list-group-item" id="temp">Tempature: </li>
+              <li class="list-group-item" id="wind">Wind: </li>
+              <li class="list-group-item" id="humidity">Humiditiy: </li>
+            </ul>
+          </div>
+        </div> -->
+      </div>
 
-<div id="forecast">
-    <!-- Display 5-day forecast data here -->
-</div>
-
-<ul id="search-history">
-    <!-- Display search history here -->
-</ul>
 
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="./assets/js.js"></script>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/850263a627.js" crossorigin="anonymous"></script>
+      <script src="./assets/js.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+        crossorigin="anonymous"
+    ></script>
 </body>
+
 </html>
