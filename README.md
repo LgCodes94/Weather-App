@@ -21,9 +21,10 @@
   
   ## License
   This project is licensed under the None license.
-  
+  You can visit site: https://lgcodes94.github.io/Weather-App/
   ## Questions
-  You can find me on GitHub: [undefined](https://github.com/undefined)
+  You can find me on GitHub: (https://github.com/undefined)
+  
   
   For any questions or inquiries, please email me at l.gonzalez6@me.com.
   
